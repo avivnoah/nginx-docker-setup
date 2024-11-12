@@ -37,7 +37,7 @@ jobs:
     # 5. Set up and run Docker Compose (to spin up containers)
     - name: Run Docker Compose
       run: |
-        docker-compose -f docker-compose.yml up -d  # Start containers in detached mode
+        docker-compose -f nginx-docker-homeassignment/docker-compose.yml up -d  # Start containers in detached mode
 
     # 6. Run tests inside the testing container (adjust to your testing framework)
     - name: Run tests
