@@ -55,7 +55,7 @@ jobs:
 
     # 8. Upload the result as an artifact
     - name: Upload result artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: result  # Name of the artifact
         path: result.txt  # Path to the result file (which contains 'succeeded' or 'fail')
