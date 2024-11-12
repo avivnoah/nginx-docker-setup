@@ -1,15 +1,15 @@
 services:
   nginx:
     build:
-      context: .
-      dockerfile: nginx-docker-homeassignment/nginx/Dockerfile.nginx
+      context: ./nginx-docker-homeassignment
+      dockerfile: nginx/Dockerfile.nginx
     ports:
       - "8080:8080"
       - "8081:8081"
 
   tester:
     build:
-      context: .
-      dockerfile: nginx-docker-homeassignment/tester/Dockerfile.test
+      context: ./nginx-docker-homeassignment
+      dockerfile: tester/Dockerfile.test
     depends_on:
       - nginx
