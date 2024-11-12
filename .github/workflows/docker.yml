@@ -31,9 +31,8 @@ jobs:
     # 4. Build Docker images using the Dockerfiles
     - name: Build Docker images
       run: |
-	cd nginx-docker-setup/nginx-docker-homeassignment
-        docker build --no-cache -t nginx-error-demo -f nginx/Dockerfile.nginx .
-        docker build --no-cache -t testing-container -f tester/Dockerfile.test .
+        docker build --no-cache -t nginx-error-demo -f nginx-docker-homeassignment/nginx/Dockerfile.nginx .
+        docker build --no-cache -t testing-container -f nginx-docker-homeassignment/tester/Dockerfile.test .
 
     # 5. Set up and run Docker Compose (to spin up containers)
     - name: Run Docker Compose
