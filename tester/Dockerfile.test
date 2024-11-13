@@ -12,6 +12,7 @@ WORKDIR /usr/src/app
 
 # Install Python dependencies
 RUN pip install requests
+RUN pip install --no-cache-dir pytest
 
 # Run the script when the container starts
 CMD ["python", "test_servers.py"]
