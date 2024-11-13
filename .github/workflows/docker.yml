@@ -39,6 +39,12 @@ jobs:
       run: |
         docker-compose -f docker-compose.yml up -d  # Start containers in detached mode
 
+    - name: Print logs for debugging
+      run: docker-compose logs testing-container
+
+    - name: Check running containers
+      run: docker ps -a  # List all containers and their status
+
     # 6. Run tests inside the testing container (adjust to your testing framework)
     - name: Run tests
       run: |
