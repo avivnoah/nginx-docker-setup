@@ -39,16 +39,15 @@ jobs:
       run: |
         docker-compose -f docker-compose.yml up -d  # Start containers in detached mode
 
+    # 5.5 Small Debugging Footprint
     - name: Print logs for debugging
       run: docker-compose logs testing-container
-
     - name: Check running containers
-      run: docker ps -a  # List all containers and their status
+      run: docker ps -a  # List all containers w/status
 
     # 6. Run tests inside the testing container (adjust to your testing framework)
     - name: Run tests
       run: |
-        docker-compose exec testing-container sh -c "ls -l /usr"  # List files in /usr/local/ in the container
         docker-compose exec testing-container pytest /usr/test_servers.py  # Run the test script
 
     # 7. Check the result of the tests and create a 'succeeded' or 'fail' file
