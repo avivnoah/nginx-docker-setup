@@ -1,0 +1,17 @@
+# using Alpine version of Python as the base image
+FROM python:3.9-alpine
+
+# Install system dependencies (curl and gcc)
+RUN apk add --no-cache curl gcc musl-dev
+
+# Copy the testing script
+COPY ./tester/test_servers.py /usr/src/app/test_servers.py
+
+# Set the working directory
+WORKDIR /usr/src/app
+
+# Install Python dependencies
+RUN pip install requests
+
+# Run the script when the container starts
+CMD ["python", "test_servers.py"]
