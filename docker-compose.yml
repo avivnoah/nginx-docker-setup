@@ -1,16 +1,16 @@
 services:
   nginx:
     build:
-      context: ./nginx
-      dockerfile: Dockerfile.nginx
+      context: .
+      dockerfile: nginx/Dockerfile.nginx
     ports:
       - "8080:8080"
       - "8081:8081"
 
   testing-container:
     build:
-      context: ./tester
-      dockerfile: Dockerfile.test
+      context: .
+      dockerfile: tester/Dockerfile.test
     command: tail -f /dev/null  # Keeps the container running
     depends_on:
       - nginx
