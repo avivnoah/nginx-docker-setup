@@ -48,7 +48,7 @@ jobs:
     # 6. Run tests inside the testing container (adjust to your testing framework)
     - name: Run tests
       run: |
-        docker-compose exec testing-container "ls -l /"  # List files in /usr/local/ in the container
+        docker-compose exec testing-container sh -c "ls -l /"  # List files in /usr/local/ in the container
         docker-compose exec testing-container pytest /usr/test_servers.py  # Run the test script
 
     # 7. Check the result of the tests and create a 'succeeded' or 'fail' file
