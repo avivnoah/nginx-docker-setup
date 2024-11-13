@@ -1,6 +1,6 @@
 import requests
 
-def check_server(url):
+def test_server(url):
     try:
         response = requests.get(url)
         print(f"Server {url} responded with status code: {response.status_code}")
@@ -9,5 +9,5 @@ def check_server(url):
         print(f"Failed to connect to {url}: {e}")
 
 # Check both servers
-check_server('http://nginx:8080')
-check_server('http://nginx:8081')
+test_server('http://nginx:8080')
+test_server('http://nginx:8081')
